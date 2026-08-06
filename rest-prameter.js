@@ -9,7 +9,7 @@ function calculetTotle(discount,...prices){
         // console.log(totle)
        
         //  console.log(totle)
-         let discountPrice=totle / discount;
+         let discountPrice=(totle* discount)/100;
           minePrice=totle-discountPrice
        
     }
