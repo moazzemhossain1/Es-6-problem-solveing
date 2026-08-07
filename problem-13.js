@@ -5,7 +5,12 @@ const findUser=(users,id)=>{
     let excepedUsers=users.find(user =>{
         return user.id===id
     })
-   return excepedUsers;
+   if(!excepedUsers) {
+    return "User not found "
+   }
+   else{
+    return excepedUsers;
+   }
 
 }
 let users = [
@@ -31,6 +36,6 @@ let users = [
     }
 ];
 
-console.log(findUser(users,4))
-console.log(findUser(users,3))
-console.log(findUser(users,5))
+console.log(findUser(users,99))
+
+
