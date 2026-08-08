@@ -10,16 +10,14 @@
  const getFormattedPrices=(prices)=>{
 
      let priceMap=prices.map((price)=>{
+        return '$'+price;
+
+     })
+     return priceMap;
         
-        return "$",price
-    })
-     return  priceMap
+   
 
-    // for(let price of prices){
-    //     return{
-
-    //     }
-    // }
+  
 
  } 
  let nubmers=[100, 250, 75] ;
