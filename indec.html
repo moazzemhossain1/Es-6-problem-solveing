@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Boy Girl Love Animation</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:#87CEEB;
+    font-family:Arial,sans-serif;
+}
+
+.scene{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        #78d5ff 0%,
+        #c9f3ff 65%,
+        #7bc96f 65%,
+        #4caf50 100%
+    );
+}
+
+
+/* =========================
+   SUN
+========================= */
+
+.sun{
+    position:absolute;
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:#FFD93D;
+    right:60px;
+    top:45px;
+    box-shadow:0 0 40px #FFD93D;
+}
+
+
+/* =========================
+   CLOUD
+========================= */
+
+.cloud{
+    position:absolute;
+    width:120px;
+    height:40px;
+    background:white;
+    border-radius:50px;
+    opacity:.8;
+}
+
+.cloud:before,
+.cloud:after{
+    content:"";
+    position:absolute;
+    background:white;
+    border-radius:50%;
+}
+
+.cloud:before{
+    width:55px;
+    height:55px;
+    left:20px;
+    bottom:10px;
+}
+
+.cloud:after{
+    width:65px;
+    height:65px;
+    right:15px;
+    bottom:5px;
+}
+
+.cloud1{
+    top:90px;
+    left:10%;
+    animation:cloudMove 18s linear infinite;
+}
+
+.cloud2{
+    top:170px;
+    left:60%;
+    transform:scale(.7);
+    animation:cloudMove 25s linear infinite;
+}
+
+@keyframes cloudMove{
+
+    0%{
+        margin-left:-150px;
+    }
+
+    100%{
+        margin-left:110vw;
+    }
+
+}
+
+
+/* =========================
+   GROUND
+========================= */
+
+.ground{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:35%;
+    background:#4caf50;
+}
+
+
+/* =========================
+   TREE
+========================= */
+
+.tree{
+    position:absolute;
+    width:300px;
+    height:500px;
+
+    left:5%;
+    bottom:27%;
+}
+
+
+/* Tree trunk */
+
+.trunk{
+    position:absolute;
+
+    width:65px;
+    height:310px;
+
+    left:120px;
+    bottom:0;
+
+    background:#704214;
+
+    border-radius:30px;
+}
+
+
+/* Branch */
+
+.branch{
+    position:absolute;
+
+    width:25px;
+    height:180px;
+
+    background:#704214;
+
+    border-radius:20px;
+
+    transform-origin:bottom;
+}
+
+.branch1{
+    left:125px;
+    bottom:205px;
+    transform:rotate(-45deg);
+}
+
+.branch2{
+    left:145px;
+    bottom:215px;
+    transform:rotate(45deg);
+}
+
+
+/* Leaves */
+
+.leaves{
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    left:20px;
+    top:0;
+
+    background:#2d6a4f;
+
+    border-radius:50%;
+
+    box-shadow:
+    -80px 50px 0 #40916c,
+    80px 50px 0 #40916c,
+    0 90px 0 #52b788;
+}
+
+
+/* =========================
+   LOVE TEXT
+========================= */
+
+.loveText{
+    position:absolute;
+
+    width:100%;
+
+    top:10%;
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    color:#e63946;
+
+    opacity:0;
+
+    animation:loveMessage 16s infinite;
+}
+
+@keyframes loveMessage{
+
+    0%,40%{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    43%,60%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    65%,100%{
+        opacity:0;
+        transform:scale(1.3);
+    }
+
+}
+
+
+/* =========================
+   CHARACTERS
+========================= */
+
+.character{
+
+    position:absolute;
+
+    width:100px;
+    height:240px;
+
+    bottom:27%;
+}
+
+
+/* =========================
+   BOY
+========================= */
+
+.boy{
+
+    left:20%;
+
+    animation:
+    boyJourney 16s infinite ease-in-out;
+
+}
+
+
+/* Head */
+
+.boyHead{
+
+    position:absolute;
+
+    width:55px;
+    height:55px;
+
+    left:23px;
+    top:0;
+
+    background:#f2c09b;
+
+    border-radius:50%;
+
+    z-index:5;
+}
+
+
+/* Hair */
+
+.boyHair{
+
+    position:absolute;
+
+    width:60px;
+    height:30px;
+
+    left:20px;
+    top:-5px;
+
+    background:#222;
+
+    border-radius:
+    50% 50% 20% 20%;
+
+    z-index:6;
+}
+
+
+/* Body */
+
+.boyBody{
+
+    position:absolute;
+
+    width:50px;
+    height:80px;
+
+    left:27px;
+    top:55px;
+
+    background:#2563eb;
+
+    border-radius:15px;
+}
+
+
+/* Arms */
+
+.boyArm{
+
+    position:absolute;
+
+    width:15px;
+    height:70px;
+
+    top:62px;
+
+    background:#f2c09b;
+
+    border-radius:10px;
+
+    transform-origin:
+    top center;
+
+}
+
+
+/* Left Arm */
+
+.boyLeftArm{
+
+    left:17px;
+
+    animation:
+    boyLeftArm 0.8s infinite alternate;
+}
+
+
+/* Right Arm */
+
+.boyRightArm{
+
+    left:68px;
+
+    animation:
+    boyRightArm 0.8s infinite alternate;
+}
+
+
+/* Legs */
+
+.boyLeg{
+
+    position:absolute;
+
+    width:18px;
+    height:85px;
+
+    top:130px;
+
+    background:#333;
+
+    border-radius:10px;
+
+    transform-origin:
+    top center;
+}
+
+
+/* Left Leg */
+
+.boyLeftLeg{
+
+    left:30px;
+
+    animation:
+    boyLeftLeg .8s infinite alternate;
+}
+
+
+/* Right Leg */
+
+.boyRightLeg{
+
+    left:58px;
+
+    animation:
+    boyRightLeg .8s infinite alternate;
+}
+
+
+/* =========================
+   BOY WALKING
+========================= */
+
+@keyframes boyLeftArm{
+
+    0%{
+        transform:rotate(35deg);
+    }
+
+    100%{
+        transform:rotate(-35deg);
+    }
+
+}
+
+@keyframes boyRightArm{
+
+    0%{
+        transform:rotate(-35deg);
+    }
+
+    100%{
+        transform:rotate(35deg);
+    }
+
+}
+
+@keyframes boyLeftLeg{
+
+    0%{
+        transform:rotate(-30deg);
+    }
+
+    100%{
+        transform:rotate(30deg);
+    }
+
+}
+
+@keyframes boyRightLeg{
+
+    0%{
+        transform:rotate(30deg);
+    }
+
+    100%{
+        transform:rotate(-30deg);
+    }
+
+}
+
+
+/* =========================
+   FLOWER IN BOY HAND
+========================= */
+
+.boyFlower{
+
+    position:absolute;
+
+    left:-10px;
+    top:100px;
+
+    font-size:38px;
+
+    z-index:10;
+
+    animation:
+    flowerGive 16s infinite;
+
+}
+
+@keyframes flowerGive{
+
+    0%,25%{
+        opacity:0;
+    }
+
+    30%,40%{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+    43%{
+        opacity:1;
+        transform:translateX(35px);
+    }
+
+    48%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   BOY JOURNEY
+========================= */
+
+@keyframes boyJourney{
+
+    /* Starting */
+
+    0%{
+        left:20%;
+        transform:translateY(0);
+    }
+
+
+    /* Walking toward girl */
+
+    25%{
+        left:43%;
+        transform:translateY(0);
+    }
+
+
+    /* Reached girl */
+
+    30%{
+        left:46%;
+        transform:translateY(0);
+    }
+
+
+    /* Kneeling */
+
+    35%{
+        left:46%;
+        transform:translateY(35px);
+    }
+
+
+    45%{
+        left:46%;
+        transform:translateY(35px);
+    }
+
+
+    /* Stand */
+
+    50%{
+        left:46%;
+        transform:translateY(0);
+    }
+
+
+    /* Walk together */
+
+    70%{
+        left:70%;
+        transform:translateY(0);
+    }
+
+
+    85%{
+        left:90%;
+        transform:translateY(0);
+    }
+
+
+    /* Return */
+
+    100%{
+        left:20%;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================
+   GIRL
+========================= */
+
+.girl{
+
+    left:55%;
+
+    animation:
+    girlJourney 16s infinite ease-in-out;
+
+}
+
+
+/* Head */
+
+.girlHead{
+
+    position:absolute;
+
+    width:55px;
+    height:55px;
+
+    left:23px;
+    top:0;
+
+    background:#f2c09b;
+
+    border-radius:50%;
+
+    z-index:5;
+}
+
+
+/* Hair */
+
+.girlHair{
+
+    position:absolute;
+
+    width:70px;
+    height:80px;
+
+    left:14px;
+    top:-8px;
+
+    background:#3b2417;
+
+    border-radius:50%;
+
+    z-index:4;
+}
+
+
+/* Body */
+
+.girlBody{
+
+    position:absolute;
+
+    width:55px;
+    height:100px;
+
+    left:24px;
+    top:55px;
+
+    background:#e83e8c;
+
+    border-radius:
+    15px 15px 25px 25px;
+}
+
+
+/* Arms */
+
+.girlArm{
+
+    position:absolute;
+
+    width:15px;
+    height:70px;
+
+    top:62px;
+
+    background:#f2c09b;
+
+    border-radius:10px;
+
+    transform-origin:
+    top center;
+
+}
+
+
+/* Girl arms */
+
+.girlLeftArm{
+    left:15px;
+}
+
+.girlRightArm{
+    left:72px;
+}
+
+
+/* Legs */
+
+.girlLeg{
+
+    position:absolute;
+
+    width:18px;
+    height:75px;
+
+    top:150px;
+
+    background:#333;
+
+    border-radius:10px;
+
+}
+
+
+/* Girl flower */
+
+.girlFlower{
+
+    position:absolute;
+
+    left:-5px;
+    top:105px;
+
+    font-size:38px;
+
+    opacity:0;
+
+    z-index:20;
+
+    animation:
+    girlReceiveFlower 16s infinite;
+
+}
+
+
+/* =========================
+   GIRL RECEIVES FLOWER
+========================= */
+
+@keyframes girlReceiveFlower{
+
+    0%,42%{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    47%{
+        opacity:1;
+        transform:scale(1.2);
+    }
+
+    52%,70%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    80%,100%{
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   GIRL JOURNEY
+========================= */
+
+@keyframes girlJourney{
+
+    0%,45%{
+        left:55%;
+        transform:scale(1);
+    }
+
+
+    /* Receives flower */
+
+    48%{
+        left:55%;
+        transform:scale(1.08);
+    }
+
+
+    /* Starts walking */
+
+    55%{
+        left:57%;
+        transform:scale(1);
+    }
+
+
+    /* Walk together */
+
+    70%{
+        left:75%;
+    }
+
+
+    85%{
+        left:92%;
+    }
+
+
+    /* Return */
+
+    100%{
+        left:55%;
+    }
+
+}
+
+
+/* =========================
+   GIRL WALK ANIMATION
+========================= */
+
+.girlLeftArm{
+
+    animation:
+    girlArmLeft .8s infinite alternate;
+}
+
+.girlRightArm{
+
+    animation:
+    girlArmRight .8s infinite alternate;
+}
+
+
+@keyframes girlArmLeft{
+
+    0%{
+        transform:rotate(30deg);
+    }
+
+    100%{
+        transform:rotate(-30deg);
+    }
+
+}
+
+@keyframes girlArmRight{
+
+    0%{
+        transform:rotate(-30deg);
+    }
+
+    100%{
+        transform:rotate(30deg);
+    }
+
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart{
+
+    position:absolute;
+
+    bottom:28%;
+
+    font-size:25px;
+
+    opacity:0;
+
+    animation:
+    heartFloat 4s infinite;
+
+}
+
+.heart1{
+    left:40%;
+}
+
+.heart2{
+    left:50%;
+    animation-delay:1s;
+}
+
+.heart3{
+    left:60%;
+    animation-delay:2s;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        bottom:28%;
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        bottom:80%;
+        opacity:0;
+        transform:scale(1.5);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .tree{
+        left:-18%;
+        transform:scale(.7);
+        transform-origin:bottom;
+    }
+
+    .sun{
+        width:60px;
+        height:60px;
+        right:25px;
+    }
+
+    .loveText{
+        font-size:25px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="scene">
+
+
+    <!-- Sun -->
+
+    <div class="sun"></div>
+
+
+    <!-- Clouds -->
+
+    <div class="cloud cloud1"></div>
+
+    <div class="cloud cloud2"></div>
+
+
+    <!-- Ground -->
+
+    <div class="ground"></div>
+
+
+    <!-- =================
+         TREE
+    ================= -->
+
+    <div class="tree">
+
+        <div class="leaves"></div>
+
+        <div class="trunk"></div>
+
+        <div class="branch branch1"></div>
+
+        <div class="branch branch2"></div>
+
+    </div>
+
+
+    <!-- Love Text -->
+
+    <div class="loveText">
+        ❤️ I Love You ❤️
+    </div>
+
+
+    <!-- =================
+         BOY
+    ================= -->
+
+    <div class="character boy">
+
+        <div class="boyHead"></div>
+
+        <div class="boyHair"></div>
+
+        <div class="boyBody"></div>
+
+
+        <!-- Arms -->
+
+        <div class="boyArm boyLeftArm"></div>
+
+        <div class="boyArm boyRightArm"></div>
+
+
+        <!-- Legs -->
+
+        <div class="boyLeg boyLeftLeg"></div>
+
+        <div class="boyLeg boyRightLeg"></div>
+
+
+        <!-- Flower -->
+
+        <div class="boyFlower">
+            🌹
+        </div>
+
+    </div>
+
+
+    <!-- =================
+         GIRL
+    ================= -->
+
+    <div class="character girl">
+
+        <div class="girlHead"></div>
+
+        <div class="girlHair"></div>
+
+        <div class="girlBody"></div>
+
+
+        <!-- Arms -->
+
+        <div class="girlArm girlLeftArm"></div>
+
+        <div class="girlArm girlRightArm"></div>
+
+
+        <!-- Legs -->
+
+        <div class="girlLeg"></div>
+
+        <div class="girlLeg"
+             style="left:58px;">
+        </div>
+
+
+        <!-- Received Flower -->
+
+        <div class="girlFlower">
+            🌹
+        </div>
+
+    </div>
+
+
+    <!-- =================
+         HEARTS
+    ================= -->
+
+    <div class="heart heart1">
+        ❤️
+    </div>
+
+    <div class="heart heart2">
+        💖
+    </div>
+
+    <div class="heart heart3">
+        💕
+    </div>
+
+
+</div>
+
+
+<script>
+
+/* ==========================================
+   EXTRA FLOATING HEARTS
+========================================== */
+
+const scene =
+document.querySelector(".scene");
+
+
+function createHeart(){
+
+    const heart =
+    document.createElement("div");
+
+    heart.innerHTML =
+    ["❤️","💖","💕","💗"]
+    [Math.floor(Math.random()*4)];
+
+
+    heart.style.position =
+    "absolute";
+
+    heart.style.left =
+    (40 + Math.random()*30) + "%";
+
+    heart.style.bottom =
+    "25%";
+
+    heart.style.fontSize =
+    (18 + Math.random()*20) + "px";
+
+    heart.style.pointerEvents =
+    "none";
+
+    scene.appendChild(heart);
+
+
+    let start =
+    Date.now();
+
+    let duration =
+    4000;
+
+
+    function animateHeart(){
+
+        let progress =
+        (Date.now()-start)/duration;
+
+
+        if(progress < 1){
+
+            heart.style.bottom =
+            (25 + progress*55) + "%";
+
+
+            heart.style.opacity =
+            progress < .2
+            ? progress*5
+            : 1-progress;
+
+
+            heart.style.transform =
+            scale(${.5+progress});
+
+
+            requestAnimationFrame(
+                animateHeart
+            );
+
+        }
+
+        else{
+
+            heart.remove();
+
+        }
+
+    }
+
+
+    animateHeart();
+
+}
+
+
+/* New hearts */
+
+setInterval(
+    createHeart,
+    1300
+);
+
+
+/* ==========================================
+   CLICK HEART EFFECT
+========================================== */
+
+scene.addEventListener(
+    "click",
+    function(event){
+
+        const heart =
+        document.createElement("div");
+
+        heart.innerHTML =
+        "💖";
+
+
+        heart.style.position =
+        "absolute";
+
+        heart.style.left =
+        event.clientX + "px";
+
+        heart.style.top =
+        event.clientY + "px";
+
+        heart.style.fontSize =
+        "30px";
+
+        heart.style.transition =
+        "all 1s ease";
+
+        heart.style.pointerEvents =
+        "none";
+
+
+        scene.appendChild(heart);
+
+
+        setTimeout(function(){
+
+            heart.style.top =
+            (event.clientY-100) + "px";
+
+            heart.style.opacity =
+            "0";
+
+            heart.style.transform =
+            "scale(1.5)";
+
+        },50);
+
+
+        setTimeout(function(){
+
+            heart.remove();
+
+        },1100);
+
+    }
+);
+
+</script>
+
+</body>
+</html>
