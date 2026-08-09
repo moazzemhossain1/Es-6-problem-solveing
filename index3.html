@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Grandmother and Tiger Story</title>
+
+
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    overflow:hidden;
+    font-family:Arial;
+
+}
+
+
+
+.scene{
+
+    width:100%;
+    height:100vh;
+
+    position:relative;
+
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.45)
+    ),
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b")
+    center/cover;
+
+
+    animation:camera 15s infinite alternate;
+
+}
+
+
+
+
+.title{
+
+    position:absolute;
+
+    top:20px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:45px;
+
+    text-shadow:3px 3px 10px black;
+
+}
+
+
+
+
+
+/* Hut */
+
+.hut{
+
+    position:absolute;
+
+    bottom:100px;
+
+    left:250px;
+
+    width:280px;
+
+}
+
+
+
+
+
+
+/* grandmother */
+
+
+.grandma{
+
+
+    position:absolute;
+
+    bottom:100px;
+
+    left:370px;
+
+    width:160px;
+
+
+    animation:cooking 3s infinite;
+
+
+}
+
+
+
+
+
+/* Tiger container */
+
+
+.tiger-box{
+
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:-350px;
+
+
+    width:300px;
+
+
+    animation:tigerMove 10s forwards;
+
+
+}
+
+
+
+
+
+.tiger{
+
+
+    width:260px;
+
+
+}
+
+
+
+
+/* Boy in tiger mouth */
+
+
+.boy{
+
+
+    position:absolute;
+
+    width:75px;
+
+
+    right:5px;
+
+    top:55px;
+
+
+    transform:rotate(35deg);
+
+
+}
+
+
+
+
+
+
+
+.fire{
+
+
+    position:absolute;
+
+    bottom:110px;
+
+    left:430px;
+
+
+    font-size:60px;
+
+
+    animation:fire 1s infinite alternate;
+
+
+}
+
+
+
+
+
+
+.story{
+
+
+    position:absolute;
+
+    bottom:30px;
+
+    width:100%;
+
+
+    text-align:center;
+
+
+    color:white;
+
+    font-size:30px;
+
+
+    text-shadow:2px 2px 5px black;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* animations */
+
+
+
+@keyframes cooking{
+
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+
+50%{
+
+transform:rotate(7deg);
+
+}
+
+
+100%{
+
+transform:rotate(0deg);
+
+}
+
+
+}
+
+
+
+
+@keyframes tigerMove{
+
+
+0%{
+
+left:-350px;
+
+}
+
+
+70%{
+
+left:650px;
+
+}
+
+
+
+100%{
+
+left:1000px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+@keyframes fire{
+
+
+from{
+
+transform:scale(.8);
+
+}
+
+
+to{
+
+transform:scale(1.3);
+
+}
+
+
+}
+
+
+
+
+
+
+@keyframes camera{
+
+
+from{
+
+background-size:100%;
+
+}
+
+
+to{
+
+background-size:120%;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="scene">
+
+
+
+<div class="title">
+
+Grandmother Forest Story
+
+</div>
+
+
+
+
+<img class="hut"
+src="https://pngimg.com/uploads/house/house_PNG35.png">
+
+
+
+
+
+
+<img class="grandma"
+src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+
+
+
+
+
+
+<div class="tiger-box">
+
+
+<img class="tiger"
+src="https://pngimg.com/uploads/tiger/tiger_PNG23220.png">
+
+
+
+<img class="boy"
+src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png">
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="fire">
+
+🔥
+
+</div>
+
+
+
+
+
+<div class="story">
+
+Every morning grandmother cooked food with her son...
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+let story=document.querySelector(".story");
+
+
+
+setTimeout(()=>{
+
+
+story.innerHTML=
+"Suddenly a tiger came from the forest...";
+
+
+},5000);
+
+
+
+
+setTimeout(()=>{
+
+
+story.innerHTML=
+"The tiger grabbed her son and ran away!";
+
+
+},9000);
+
+
+
+
+
+setInterval(()=>{
+
+
+location.reload();
+
+
+},15000);
+
+
+
+</script>
+
+
+
+</body>
+
+
+</html>

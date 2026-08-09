@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Colorful Dance Animation</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    overflow:hidden;
+    font-family:Arial;
+}
+
+
+
+
+.stage{
+
+    width:100%;
+    height:100vh;
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        120deg,
+        #ff758c,
+        #667eea,
+        #764ba2
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+
+
+
+.title{
+
+position:absolute;
+
+top:25px;
+
+width:100%;
+
+text-align:center;
+
+font-size:45px;
+
+color:white;
+
+text-shadow:3px 3px 10px black;
+
+z-index:10;
+
+}
+
+
+
+
+
+/* Moving light */
+
+.light{
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+border-radius:50%;
+
+background:white;
+
+opacity:.25;
+
+filter:blur(60px);
+
+animation:lightMove 5s infinite alternate;
+
+}
+
+
+
+@keyframes lightMove{
+
+
+from{
+
+transform:translateX(-400px);
+
+}
+
+
+to{
+
+transform:translateX(400px);
+
+}
+
+
+}
+
+
+
+
+
+/* Floor */
+
+
+.floor{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+height:160px;
+
+background:#111;
+
+}
+
+
+
+
+
+/* Falling colorful particles */
+
+
+.particles span{
+
+
+position:absolute;
+
+top:-50px;
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+animation:fall 5s linear infinite;
+
+
+}
+
+
+
+
+.particles span:nth-child(5n+1){
+
+background:#ff0066;
+
+box-shadow:0 0 25px #ff0066;
+
+}
+
+
+
+.particles span:nth-child(5n+2){
+
+background:#00ffff;
+
+box-shadow:0 0 25px #00ffff;
+
+}
+
+
+
+.particles span:nth-child(5n+3){
+
+background:#ffff00;
+
+box-shadow:0 0 25px #ffff00;
+
+}
+
+
+
+.particles span:nth-child(5n+4){
+
+background:#9d00ff;
+
+box-shadow:0 0 25px #9d00ff;
+
+}
+
+
+
+.particles span:nth-child(5n+5){
+
+background:#00ff66;
+
+box-shadow:0 0 25px #00ff66;
+
+}
+
+
+
+
+.particles span:nth-child(1){left:5%;animation-delay:0s;}
+.particles span:nth-child(2){left:12%;animation-delay:.5s;}
+.particles span:nth-child(3){left:20%;animation-delay:1s;}
+.particles span:nth-child(4){left:30%;animation-delay:1.5s;}
+.particles span:nth-child(5){left:40%;animation-delay:2s;}
+
+.particles span:nth-child(6){left:50%;animation-delay:.3s;}
+.particles span:nth-child(7){left:60%;animation-delay:1.2s;}
+.particles span:nth-child(8){left:70%;animation-delay:2.5s;}
+.particles span:nth-child(9){left:80%;animation-delay:.8s;}
+.particles span:nth-child(10){left:90%;animation-delay:1.8s;}
+
+.particles span:nth-child(11){left:25%;animation-delay:3s;}
+.particles span:nth-child(12){left:45%;animation-delay:3.5s;}
+.particles span:nth-child(13){left:65%;animation-delay:2.8s;}
+.particles span:nth-child(14){left:75%;animation-delay:4s;}
+.particles span:nth-child(15){left:95%;animation-delay:3.2s;}
+
+
+
+
+
+@keyframes fall{
+
+
+0%{
+
+transform:
+translateY(-100px)
+rotate(0deg)
+scale(.5);
+
+opacity:0;
+
+}
+
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+
+100%{
+
+transform:
+translateY(110vh)
+rotate(360deg)
+scale(1);
+
+opacity:0;
+
+}
+
+
+
+}
+
+
+
+
+
+/* Dancers */
+
+
+.dancers{
+
+display:flex;
+
+gap:120px;
+
+align-items:flex-end;
+
+z-index:5;
+
+}
+
+
+
+
+
+.person{
+
+
+position:relative;
+
+width:130px;
+
+height:310px;
+
+animation:dance 1.5s infinite ease-in-out;
+
+
+}
+
+
+
+
+
+.head{
+
+
+width:80px;
+
+height:80px;
+
+background:#f1b07a;
+
+border-radius:50%;
+
+margin:auto;
+
+position:relative;
+
+}
+
+
+
+
+
+.hair{
+
+
+position:absolute;
+
+top:-10px;
+
+width:80px;
+
+height:35px;
+
+background:#222;
+
+border-radius:50%;
+
+}
+
+
+
+
+.body{
+
+
+width:75px;
+
+height:110px;
+
+margin:auto;
+
+border-radius:30px;
+
+background:#3498db;
+
+}
+
+
+
+.girl .body{
+
+background:#ff1493;
+
+}
+
+
+
+
+
+.arm{
+
+
+position:absolute;
+
+top:90px;
+
+width:18px;
+
+height:100px;
+
+background:#f1b07a;
+
+border-radius:20px;
+
+}
+
+
+
+.left{
+
+left:10px;
+
+animation:hand1 1s infinite alternate;
+
+}
+
+
+
+.right{
+
+right:10px;
+
+animation:hand2 1s infinite alternate;
+
+}
+
+
+
+
+
+.leg{
+
+
+position:absolute;
+
+bottom:0;
+
+width:22px;
+
+height:100px;
+
+background:#222;
+
+border-radius:20px;
+
+}
+
+
+
+
+.leg1{
+
+left:35px;
+
+animation:leg1 1s infinite alternate;
+
+}
+
+
+
+.leg2{
+
+right:35px;
+
+animation:leg2 1s infinite alternate;
+
+}
+
+
+
+
+
+
+@keyframes dance{
+
+
+0%{
+
+transform:translateY(0) rotate(0);
+
+}
+
+
+50%{
+
+transform:translateY(-30px) rotate(8deg);
+
+}
+
+
+100%{
+
+transform:translateY(0) rotate(-8deg);
+
+}
+
+
+}
+
+
+
+
+
+@keyframes hand1{
+
+
+from{
+
+transform:rotate(20deg);
+
+}
+
+to{
+
+transform:rotate(90deg);
+
+}
+
+}
+
+
+
+@keyframes hand2{
+
+
+from{
+
+transform:rotate(-20deg);
+
+}
+
+to{
+
+transform:rotate(-90deg);
+
+}
+
+}
+
+
+
+
+
+@keyframes leg1{
+
+
+from{
+
+transform:rotate(20deg);
+
+}
+
+to{
+
+transform:rotate(-20deg);
+
+}
+
+}
+
+
+
+
+@keyframes leg2{
+
+
+from{
+
+transform:rotate(-20deg);
+
+}
+
+to{
+
+transform:rotate(20deg);
+
+}
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<div class="stage">
+
+
+<div class="title">
+🌈 Colorful Boy & Girl Dance 🌈
+</div>
+
+
+
+<div class="light"></div>
+
+
+
+
+<div class="particles">
+
+<span></span><span></span><span></span>
+<span></span><span></span><span></span>
+<span></span><span></span><span></span>
+<span></span><span></span><span></span>
+<span></span><span></span><span></span>
+
+
+</div>
+
+
+
+
+<div class="dancers">
+
+
+<div class="person boy">
+
+
+<div class="head">
+<div class="hair"></div>
+</div>
+
+
+<div class="body"></div>
+
+<div class="arm left"></div>
+<div class="arm right"></div>
+
+
+<div class="leg leg1"></div>
+<div class="leg leg2"></div>
+
+
+</div>
+
+
+
+
+
+<div class="person girl">
+
+
+<div class="head">
+<div class="hair"></div>
+</div>
+
+
+<div class="body"></div>
+
+<div class="arm left"></div>
+<div class="arm right"></div>
+
+
+<div class="leg leg1"></div>
+<div class="leg leg2"></div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="floor"></div>
+
+
+
+</div>
+
+
+
+<script>
+
+
+let dancers=document.querySelector(".dancers");
+
+
+setInterval(()=>{
+
+
+dancers.style.transform="scale(1.05)";
+
+
+setTimeout(()=>{
+
+dancers.style.transform="scale(1)";
+
+
+},500);
+
+
+},1500);
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
